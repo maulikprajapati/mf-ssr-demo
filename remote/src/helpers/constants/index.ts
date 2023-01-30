@@ -1,0 +1,1 @@
+export const MAX_SNACK_NOTIFICATION = 10;

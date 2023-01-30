@@ -1,0 +1,9 @@
+{
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "@typescript-eslint/no-var-requires": "none",
+    "@typescript-eslint/no-explicit-any": "none"
+  }
+}
