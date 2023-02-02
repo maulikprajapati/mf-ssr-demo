@@ -48,8 +48,8 @@ module.exports = merge(shared, {
   },
   plugins: [
     moduleFederationPlugin.client,
-    // new HtmlWebpackPlugin({
-    //   template: './public/index.html',
-    // }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
   ],
 });

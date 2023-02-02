@@ -1,29 +1,21 @@
 import React from 'react';
+import RouterComponent from './Router';
+// import { Link, Route, Router } from 'react-router-dom';
 import './App.scss';
 import './styles/globals.scss';
 
-import { dynamicTheme as defaultTheme } from 'ui/foundations';
-import { MuiThemeProvider } from 'providers/MuiThemeProvider';
-import { ToastProvider } from 'providers/ToastProvider';
-import { useApollo } from 'graphql-client/apolloClient';
-import { ApolloProvider } from '@apollo/client';
-import { AppWrapper } from 'providers/AppProvider';
-import Router from './routes';
-
 function App() {
-  const apolloClient = useApollo();
-
   return (
-    <ApolloProvider client={apolloClient}>
-      <AppWrapper>
-        <MuiThemeProvider dynamicTheme={defaultTheme}>
-          {/* Theme can change at run time (with help of either context or store) */}
-          <ToastProvider>
-            <Router />
-          </ToastProvider>
-        </MuiThemeProvider>
-      </AppWrapper>
-    </ApolloProvider>
+    <RouterComponent />
+    // <>
+    //   <h1 className='color-green'>App</h1>
+    //   {/* <Link to={'/page1'}>Page 1</Link>
+    //   <Link to={'/page2'}>Page 1</Link>
+    //   <Router>
+    //     <Route path='/page1' element={<h1>Page 1 from remote</h1>}></Route>
+    //     <Route path='/page2' element={<h1>Page 2 from remote</h1>}></Route>
+    //   </Router> */}
+    // </>
   );
 }
 

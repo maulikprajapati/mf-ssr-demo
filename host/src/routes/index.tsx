@@ -16,8 +16,12 @@ const Router = () => {
         </li>
       </ul>
       <Routes>
-        <Route path='/remote/*' element={<RemoteHome />} />
+        <Route path='/' element={<h1 >Home</h1>} />
+        <Route path='/remote' element={<h1 >Remote</h1>} /><Route path='/remote' element={<h1 >Remote</h1>} />
       </Routes>
+      <React.Suspense fallback={<h4>Loading...</h4>}>
+        <RemoteHome />
+      </React.Suspense>
     </>
   );
 };

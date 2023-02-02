@@ -13,6 +13,7 @@ Object.keys(env).forEach((key) => {
 module.exports = {
   devServer: {
     historyApiFallback: true,
+    hot: true,
     static: {
       directory: join(__dirname, '../public'),
     },

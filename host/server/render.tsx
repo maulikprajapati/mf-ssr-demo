@@ -19,19 +19,11 @@ export default async (req: any, res: any) => {
         res.statusCode = didError ? 500 : 200;
         res.setHeader('Content-type', 'text/html');
         res.write('<!DOCTYPE html>');
-        res.write(`<html ${helmet.htmlAttributes.toString()}>
-      <head>
-        ${helmet.title.toString() || 'host'} 
-        ${helmet.meta.toString()}
-        ${helmet.link.toString()}
-      </head>
-      <body>`);
+        res.write(`<html ${helmet.htmlAttributes.toString()}><head>${helmet.title.toString() || 'host'}${helmet.meta.toString()}${helmet.link.toString()}</head><body>`);
         res.write('<div id="root">');
         stream.pipe(res);
         res.write('</div>');
-        res.write(
-          `<script async data-chunk="main" src="http://localhost:${process.env.PORT || '3000'}/static/main.js"></script>`,
-        );
+        res.write(`<script async data-chunk="main" src="http://localhost:${process.env.PORT || '3000'}/static/main.js"></script>`);
         res.write('</body></html>');
       },
       onShellError(e: any) {

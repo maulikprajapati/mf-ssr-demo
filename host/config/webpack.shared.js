@@ -15,6 +15,7 @@ module.exports = {
   mode: "development",
   devServer: {
     historyApiFallback: true,
+    hot: true,
     static: {
       directory: join(__dirname, "../public"),
     },

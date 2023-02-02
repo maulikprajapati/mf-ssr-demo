@@ -5,8 +5,7 @@ const deps = {};
 Object.keys(dependencies).forEach((element) => {
   deps[element] = {
     requiredVersion: dependencies[element],
-    eager: true,
-    singleton: true,
+    // eager: true,
   };
 });
 
@@ -21,9 +20,8 @@ const clientFederationConfig = {
   remotes: {
     "@remote": `remote@${process.env.REMOTE_URL}/static/remoteEntry.js`,
   },
-  shared: {
-    ...deps,
-  },
+  // shared: { ...deps, react: { eager: true }, "react-dom": { eager: true } },
+  // shared: ["react", "react-dom"],
 };
 
 module.exports = {
@@ -40,9 +38,8 @@ module.exports = {
       remotes: {
         "@remote": `remote@${process.env.REMOTE_URL}/server/remoteEntry.js`,
       },
-      shared: {
-        ...deps,
-      },
+      // shared: { ...deps, react: { eager: true }, "react-dom": { eager: true } },
+      // shared: ["react", "react-dom"],
     }),
     new StreamingTargetPlugin({
       name: "host",
