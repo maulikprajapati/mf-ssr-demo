@@ -37,6 +37,9 @@ module.exports = {
       library: { type: 'commonjs-module' },
       filename: 'remoteEntry.js',
       remotes: {},
+      exposes: {
+    './App': `${rootDir}/App.js`,
+  },
       shared
     }),
     new StreamingTargetPlugin({
